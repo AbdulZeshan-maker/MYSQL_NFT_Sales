@@ -2,9 +2,7 @@
 
 ## Tools used: MYSQL Workbench
 
-**Note:** I have used the SQL file dataset named as cryptopunk_pricedata.sql present inside the Dataset_SQL_File folder. This dataset you get in MYSQL Workbench after running the sql query. Remember to create database before the set of query given and then you will get the clean  
-table of data same dataset csv file named as cryptopunkdata.csv is also present inside the folder Dataset_SQL_File folder but this project is  
-made using the cryptopunk_pricedata.sql file so some changes you might see if you import the csv file, so use cryptopunk_pricedata.sql file.
+**Note:** I have used the SQL file dataset named as cryptopunk_pricedata.sql present inside the Dataset_SQL_File folder. This dataset you get in MYSQL Workbench after running the sql query. Remember to create database before the set of query given and then you will get the clean table of data same dataset csv file named as cryptopunkdata.csv is also present inside the folder Dataset_SQL_File folder but this project is made using the cryptopunk_pricedata.sql file so some changes you might see if you import the csv file, so use cryptopunk_pricedata.sql file.
 
 **Folder Structure:** The main folder is MYSQL NFT_Sales and all the folders are contained inside it.  
 1) Dataset _SQL_File: This folder contains cryptopunk_pricedata.sql file which is used to get the dataset by running it in MYSQL Workbench.
