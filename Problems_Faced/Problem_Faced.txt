@@ -1,0 +1,72 @@
+#Problems faced while making the project on MYSQL Workbench
+
+ Q) When i ran this CREATE VIEW 1919_purchases AS SELECT * FROM pricedata
+   WHERE buyer_address='0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685';
+   its shows no error but when i ran this CREATE VIEW 1919_purchases AS
+   SELECT * FROM pricedata
+   WHERE buyer_address="0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685";
+   why it showed unknown column error?
+
+  Answer: Why does " sometimes give an error?: 
+  MySQL by default treats double quotes (") as
+  identifiers (column or table names) unless ANSI_QUOTES mode is enabled.
+  When ANSI_QUOTES is not enabled,
+  MySQL assumes "0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685" is a column name,
+  which does not exist in your table, so it throws "Unknown column".
+
+ Q) Why does " sometimes work without an error?
+
+ Answer : If ANSI_QUOTES is enabled, MySQL treats double quotes as string literals,
+ just like single quotes (').
+ This means "0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685" is
+ interpreted as a string instead of a column name, making the query execute 
+ correctly.
+
+ Q) But i did nothing with ansi_quotes and still one time wrong  for " 
+ but other time right for "
+ Answer : Possible Explanations:
+
+ Session-Based SQL Mode Changed:
+
+ MySQL’s SQL mode can change between sessions. If ANSI_QUOTES was temporarily
+ enabled or disabled between runs, it could explain why " " worked once and
+ not the other time.
+
+ Query Parsing Behavior:
+
+ MySQL might parse double quotes differently in different contexts. Sometimes, " " is treated as a column name; other times, it is treated as a     string depending on:
+ Query optimizer behavior
+ Previous query execution history
+ How MySQL interprets the statement at that moment
+ Implicit Type Conversion
+
+ If buyer_address is a CHAR or VARCHAR, MySQL might internally cast
+ "0x1919..." (which is an explicitly defined string literal) differently
+ compared to how it processes single-quoted values.
+
+ MySQL Workbench Caching or Query Execution Differences
+
+ MySQL Workbench sometimes caches queries and might interpret " " 
+ differently across executions.
+ How to Ensure Consistency
+ Always use single quotes (') for string literals:
+
+ WHERE buyer_address = '0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685';
+ If you want to confirm whether ANSI_QUOTES was involved, check SQL 
+ mode before running the query:
+
+ SELECT @@sql_mode;
+
+ If you want to force MySQL to treat double quotes as strings,
+ manually enable ANSI_QUOTES:
+
+ SET SESSION sql_mode = 'ANSI_QUOTES';
+
+ Final Recommendation:
+ Stick to single quotes (') for string values to avoid inconsistenciesacross different MySQL versions or settings.
+
+ Q) While solving question 10, i was comparing one row row with each row of a particular month of a particular year, but due 
+ to session time out i got  error.
+ 
+ Answer: You can enter a query to increase the running time to 30 seconds if you have permission. But i did not did that, since its too lengthy,
+ so i used window function with rank function.
