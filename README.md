@@ -8,22 +8,18 @@ table of data same dataset csv file named as cryptopunkdata.csv is also present 
 made using the cryptopunk_pricedata.sql file so some changes you might see if you import the csv file, so use cryptopunk_pricedata.sql file.
 
 **Folder Structure:** The main folder is MYSQL NFT_Sales and all the folders are contained inside it.  
-1)Dataset _SQL_File: This folder contains cryptopunk_pricedata.sql file which is used to get the dataset by running it in MYSQL Workbench.
-   It also contains the similar dataset named as cryptopunkdata.csv. In making the project cryptopunk_pricedata.sql is used, and       cryptopunk_pricedata.sql may show different dataset or more cleaned data than cryptopunkdata.csv, that's why you might get different result than      mine if you use cryptopunkdata.csv. So please better use cryptopunk_pricedata.sql to get data, just like me.
+1) Dataset _SQL_File: This folder contains cryptopunk_pricedata.sql file which is used to get the dataset by running it in MYSQL Workbench.
+   It also contains the similar dataset named as cryptopunkdata.csv. In making the project cryptopunk_pricedata.sql is used, and cryptopunk_pricedata.sql may show different dataset or 
+   more cleaned data than cryptopunkdata.csv, that's why you might get different result than mine if you use cryptopunkdata.csv. So please better use cryptopunk_pricedata.sql to get 
+   data, just like me.
 2) Problems_Faced: This folder contains a text file named as Problem_Faced.txt mentioning the problem faced and the answer to it
 3) Queries: This folder contains the sql file named as NFT_query.sql which contains all the sql query related to the project.
 4) Questions: This folder contains a text file named as Project_Questions.txt which contains all the questions asked in the project
 5) Result_Images: This folder contains all the images of the output i got after running the project
 
 **Project Description:** Over the past 18 months, an emerging technology has caught the attention of the world; the NFT. What is an NFT? They are digital assets stored on the blockchain. And over $22 billion was spent last year on purchasing NFTs. Why? People enjoyed the art, the speculated on what they might be worth in the future, and people didn’t want to miss out. 
-
-The future of NFT’s is unclear as much of the NFT’s turned out to be scams of sorts since the field is wildly unregulated. They’re also contested heavily for their impact on the environment.
- 
-Regardless of these controversies, it is clear that there is money to be made in NFT’s. And one cool part about NFT’s is that all of the data is recorded on the blockchain, meaning anytime something happens to an NFT, it is logged in this database. 
- 
-In this project, you’ll be tasked to analyze real-world NFT data. 
-That data set is a sales data set of one of the most famous NFT projects, Cryptopunks. Meaning each row of the data set represents a sale of an NFT. The data includes sales from January 1st, 2018 to December 31st, 2021. The table has several columns including the buyer address, the ETH price, the price in U.S. dollars, the seller’s address, the date, the time, the NFT ID, the transaction hash, and the NFT name.
-You might not understand all the jargon around the NFT space, but you should be able to infer enough to answer the following prompts.
+The future of NFT’s is unclear as much of the NFT’s turned out to be scams of sorts since the field is wildly unregulated. They’re also contested heavily for their impact on the environment. Regardless of these controversies, it is clear that there is money to be made in NFT’s. And one cool part about NFT’s is that all of the data is recorded on the blockchain, meaning anytime something happens to an NFT, it is logged in this database. 
+In this project, you’ll be tasked to analyze real-world NFT data. That data set is a sales data set of one of the most famous NFT projects, Cryptopunks. Meaning each row of the data set represents a sale of an NFT. The data includes sales from January 1st, 2018 to December 31st, 2021. The table has several columns including the buyer address, the ETH price, the price in U.S. dollars, the seller’s address, the date, the time, the NFT ID, the transaction hash, and the NFT name. You might not understand all the jargon around the NFT space, but you should be able to infer enough to answer the following prompts.
  
 1) How many sales occurred during this time period? 
 2) Return the top 5 most expensive transactions (by USD price) for this data set. Return the name, ETH price, and USD price, as well as the date.
